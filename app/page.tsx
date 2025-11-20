@@ -159,22 +159,28 @@ export default function HomePage() {
         ))}
       </section>
 
-      <section className="rounded-3xl border p-10 text-center text-white" style={{borderColor: 'var(--border-subtle)', background: 'var(--color-bg-elevated)'}}>
-        <p className="pill inline-flex items-center justify-center gap-2">
-          <ShieldCheck className="h-4 w-4" />
-          {copy.contact.pill}
-        </p>
-        <h2 className="mt-6 text-4xl font-bold text-white">{copy.contact.title}</h2>
-        <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed" style={{color: '#cbd5e1'}}>
-          {copy.contact.description}
-        </p>
-        <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:justify-center">
-          <Link href="/contact" className="btn-primary">
-            {copy.contact.fields.submit}
-          </Link>
-          <Link href="/about" className="btn-secondary">
-            {copy.navigation.about}
-          </Link>
+      <section className="rounded-3xl border p-10 lg:p-12 text-white" style={{borderColor: 'var(--border-subtle)', background: 'var(--color-bg-elevated)'}}>
+        <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 items-center">
+          <div className="space-y-6">
+            <div className="space-y-4">
+              <p className="pill inline-flex items-center gap-2">
+                <ShieldCheck className="h-4 w-4" />
+                {copy.contact.pill}
+              </p>
+              <h2 className="text-4xl font-bold text-white lg:text-5xl">{copy.contact.title}</h2>
+              <p className="text-lg leading-relaxed" style={{color: '#cbd5e1'}}>
+                {copy.contact.description}
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col gap-4 sm:flex-row lg:flex-col lg:items-start">
+            <Link href="/contact" className="btn-primary w-full sm:w-auto lg:w-full">
+              {copy.contact.fields.submit}
+            </Link>
+            <Link href="/about" className="btn-secondary w-full sm:w-auto lg:w-full">
+              {copy.navigation.about}
+            </Link>
+          </div>
         </div>
       </section>
     </div>
