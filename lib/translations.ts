@@ -70,7 +70,6 @@ export type TranslationSchema = {
     addressLabel: string;
     address: string;
     signature: string;
-    stripeNote: string;
   };
 };
 
@@ -159,8 +158,6 @@ export const translations: Record<Locale, TranslationSchema> = {
       addressLabel: "Base operacional",
       address: "Anápolis, Goiás — Brasil",
       signature: "Desenvolvido e mantido por HC Engenharia de Software.",
-      stripeNote:
-        "Pronto para verificações Stripe e PSPs: subdomínios HTTPS e dados comerciais entregues sob NDA.",
     },
   },
   en: {
@@ -246,8 +243,6 @@ export const translations: Record<Locale, TranslationSchema> = {
       addressLabel: "Operational base",
       address: "Anápolis, Goiás — Brazil",
       signature: "Developed and maintained by HC Engenharia de Software.",
-      stripeNote:
-        "Stripe & PSP ready: HTTPS subdomains with merchant data delivered under NDA.",
     },
   },
 };

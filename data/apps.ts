@@ -18,8 +18,8 @@ export const apps: AppInfo[] = [
       en: "3D Manager",
     },
     summary: {
-      pt: "Plataforma para bureaus de impressão 3D: fila centralizada de jobs, orçamentos e checklists de produção.",
-      en: "Platform for 3D printing bureaus: centralized job queue, quoting, and production checklists.",
+      pt: "Plataforma para empresas de impressão 3D: fila centralizada de jobs, orçamentos e checklists de produção.",
+      en: "Platform for 3D printing businesses: centralized job queue, quoting, and production checklists.",
     },
     url: "https://3dmanager.hc-hub.com",
     category: {
