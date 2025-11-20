@@ -1,8 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ShieldCheck, ArrowUpRight } from "lucide-react";
+import { ShieldCheck, ArrowUpRight, Menu, X } from "lucide-react";
 import { LanguageToggle } from "@/components/language/LanguageToggle";
 import { useTranslations } from "@/hooks/useTranslations";
 import type { TranslationSchema } from "@/lib/translations";
@@ -18,6 +19,7 @@ export const Header = () => {
   const pathname = usePathname();
   const { copy } = useTranslations();
   const nav = copy.navigation;
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-30 border-b border-white/10 bg-[rgba(2,6,23,0.9)] backdrop-blur-xl">
@@ -49,8 +51,38 @@ export const Header = () => {
             {nav.contact}
             <ArrowUpRight className="h-4 w-4" />
           </Link>
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 text-white transition-colors hover:bg-white/5 md:hidden"
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileMenuOpen}
+          >
+            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="border-t border-white/10 bg-[rgba(2,6,23,0.98)] backdrop-blur-xl md:hidden">
+          <nav className="flex flex-col space-y-1 px-6 py-4">
+            {navOrder.map(({ key, href }) => (
+              <Link
+                key={key}
+                href={href}
+                onClick={() => setMobileMenuOpen(false)}
+                className={`rounded-lg px-4 py-3 text-base font-medium transition-colors ${
+                  pathname === href
+                    ? "bg-white/10 text-white"
+                    : "text-slate-300 hover:bg-white/5 hover:text-white"
+                }`}
+              >
+                {nav[key]}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      )}
     </header>
   );
 };
