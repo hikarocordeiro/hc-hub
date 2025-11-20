@@ -27,7 +27,9 @@ export type TranslationSchema = {
   };
   apps: {
     title: string;
+    pillLabel: string;
     subtitle: string;
+    description: string;
     moreCta: string;
     cardCta: string;
   };
@@ -98,8 +100,11 @@ export const translations: Record<Locale, TranslationSchema> = {
     },
     apps: {
       title: "Nossas Aplicações",
+      pillLabel: "Aplicações",
       subtitle:
         "Cada aplicação é desenvolvida com foco na simplicidade, experiência do usuário e funcionalidades que fazem diferença no dia a dia.",
+      description:
+        "Explore nossa coleção de webapps criados para simplificar processos, aumentar produtividade e oferecer experiências digitais intuitivas.",
       moreCta: "Explorar 3D Manager",
       cardCta: "Acessar aplicação",
     },
@@ -184,8 +189,11 @@ export const translations: Record<Locale, TranslationSchema> = {
     },
     apps: {
       title: "Our Applications",
+      pillLabel: "Applications",
       subtitle:
         "Each application is crafted with focus on simplicity, user experience, and features that make a real difference in daily workflows.",
+      description:
+        "Explore our collection of webapps designed to simplify processes, boost productivity, and deliver intuitive digital experiences.",
       moreCta: "Explore 3D Manager",
       cardCta: "Open application",
     },
