@@ -21,7 +21,10 @@ export default function AboutPage() {
         </p>
         <h1 className="text-4xl font-semibold text-white">{copy.about.title}</h1>
         <p className="text-lg text-slate-300">
-          HC Engenharia de Software — CNPJ disponível sob solicitação para validações de pagamento e due diligence.
+          HC Engenharia de Software Ltda é uma empresa dedicada a fornecer soluções
+          inovadoras e de alta qualidade no campo da engenharia de software. Nossa missão
+          é capacitar empresas e indivíduos com ferramentas tecnológicas que impulsionam
+          a eficiência, segurança e crescimento sustentável.
         </p>
       </header>
       <div className="grid gap-4 md:grid-cols-3">

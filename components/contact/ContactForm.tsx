@@ -224,7 +224,6 @@ export const ContactForm = () => {
         {status === "success" && copy.contact.submitted}
         {status === "error" && copy.contact.serverError}
       </div>
-      <p className="text-xs text-slate-400">{copy.contact.endpointNote}</p>
     </form>
   );
 };
