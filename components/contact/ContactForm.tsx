@@ -68,7 +68,7 @@ export const ContactForm = () => {
           email: form.email,
           company: form.company,
           message: form.message,
-          lgpdConsent: form.consent,
+          termsConsent: form.consent,
           captchaToken,
         }),
       });
@@ -185,16 +185,32 @@ export const ContactForm = () => {
         <input
           id="consent"
           type="checkbox"
-          className="mt-1"
+          className="mt-1 shrink-0"
           checked={form.consent}
           onChange={(event) => handleChange("consent", event.target.checked)}
           required
         />
         <div>
-          <label htmlFor="consent" className="font-semibold">
-            {copy.contact.fields.consent}
+          <label htmlFor="consent" className="text-sm text-slate-300">
+            {copy.contact.fields.consentPrefix}{" "}
+            <a
+              href="/legal/terms"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-sky-400 hover:text-sky-300 underline"
+            >
+              {copy.contact.fields.termsLink}
+            </a>
+            {" "}{copy.contact.fields.consentMiddle}{" "}
+            <a
+              href="/legal/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-sky-400 hover:text-sky-300 underline"
+            >
+              {copy.contact.fields.privacyLink}
+            </a>
           </label>
-          <p className="text-sm text-slate-400">{copy.contact.fields.consentDescription}</p>
           {errors.consent && (
             <p className="mt-1 text-sm text-rose-300" role="alert">
               {errors.consent}

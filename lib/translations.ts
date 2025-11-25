@@ -51,8 +51,10 @@ export type TranslationSchema = {
       email: string;
       company: string;
       message: string;
-      consent: string;
-      consentDescription: string;
+      consentPrefix: string;
+      termsLink: string;
+      consentMiddle: string;
+      privacyLink: string;
       submit: string;
     };
     errors: {
@@ -141,9 +143,10 @@ export const translations: Record<Locale, TranslationSchema> = {
         email: "E-mail corporativo",
         company: "Empresa (opcional)",
         message: "Mensagem",
-        consent: "Concordo com o tratamento dos dados conforme a LGPD",
-        consentDescription:
-          "Guardamos apenas o necessário para comprovar consentimento LGPD e auditorias.",
+        consentPrefix: "Li e aceito os",
+        termsLink: "Termos de Uso",
+        consentMiddle: "e a",
+        privacyLink: "Política de Privacidade",
         submit: "Enviar mensagem",
       },
       errors: {
@@ -405,12 +408,13 @@ export const translations: Record<Locale, TranslationSchema> = {
       captchaMissing: "Complete the CAPTCHA before submitting.",
       fields: {
         name: "Full name",
-        email: "Work email",
+        email: "Corporate email",
         company: "Company (optional)",
         message: "Message",
-        consent: "I agree with the LGPD-compliant data handling",
-        consentDescription:
-          "We retain only what is required to prove LGPD consent and support audits.",
+        consentPrefix: "I have read and accept the",
+        termsLink: "Terms of Use",
+        consentMiddle: "and",
+        privacyLink: "Privacy Policy",
         submit: "Send message",
       },
       errors: {

@@ -4,9 +4,9 @@ const CONTACT_ENDPOINT = process.env.CONTACT_ENDPOINT;
 const TURNSTILE_SECRET_KEY = process.env.TURNSTILE_SECRET_KEY;
 
 export async function POST(req: NextRequest) {
-  const { name, email, company, message, lgpdConsent, captchaToken } = await req.json();
+  const { name, email, company, message, termsConsent, captchaToken } = await req.json();
 
-  if (!name || !email || !message || !lgpdConsent) {
+  if (!name || !email || !message || !termsConsent) {
     return NextResponse.json({ error: "Invalid payload" }, { status: 400 });
   }
 
@@ -45,7 +45,7 @@ export async function POST(req: NextRequest) {
         email,
         company,
         message,
-        lgpdConsent,
+        termsConsent,
         to: "contact@hc-hub.com",
         source: "hc-hub.com",
       }),
