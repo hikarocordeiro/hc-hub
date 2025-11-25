@@ -33,7 +33,7 @@ NEXT_PUBLIC_TURNSTILE_SITE_KEY="<public-site-key>"
 TURNSTILE_SECRET_KEY="<server-secret-key>"
 ```
 
-- `CONTACT_ENDPOINT`: endpoint HTTPS que receberá o payload e encaminhará o e-mail para `contact@hc-hub.com` (ex.: Mailtrap/TrapMail). O arquivo `app/api/contact/route.ts` já lê essa variável e faz o forward usando `fetch`.
+- `CONTACT_ENDPOINT`: endpoint HTTPS que receberá o payload e encaminhará o e-mail para `hello@hc-hub.com` (ex.: Mailtrap/TrapMail). O arquivo `app/api/contact/route.ts` já lê essa variável e faz o forward usando `fetch`.
 - `NEXT_PUBLIC_TURNSTILE_SITE_KEY` e `TURNSTILE_SECRET_KEY`: chaves do Cloudflare Turnstile. O componente de formulário desabilita o envio até que o token válido seja recebido e o endpoint `/api/contact` valida o token antes do forward.
 
 > Sugestão operacional: adicionar monitoramento ao `/api/contact` para garantir que o TrapMail continue respondendo (ex.: healthcheck). Consulte `docs/todo.md` para itens pendentes.
@@ -45,7 +45,7 @@ TURNSTILE_SECRET_KEY="<server-secret-key>"
 - O formulário de contato e o widget Turnstile ficam em `components/contact/`. Ajuste os campos ali caso precise coletar mais dados (atenção às regras LGPD).
 
 ## Contato & privacidade
-- Mensagens são respondidas por `contact@hc-hub.com`. O payload enviado pelo formulário contém apenas os campos solicitados + consentimento LGPD e não é armazenado no front-end.
+- Mensagens são respondidas por `hello@hc-hub.com`. O payload enviado pelo formulário contém apenas os campos solicitados + consentimento LGPD e não é armazenado no front-end.
 - A validação do CAPTCHA ocorre em `app/api/contact/route.ts` antes de encaminhar ao TrapMail, atendendo às exigências de provedores como Stripe.
 
 ## Stripe readiness

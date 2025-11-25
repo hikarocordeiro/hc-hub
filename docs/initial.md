@@ -35,7 +35,7 @@ Contact Form — requisitos detalhados:
 - Accessibility: proper labels, aria-live for messages, keyboard accessible.
 
 CAPTCHA integration note (for the agent/dev):
-- Do not hardcode a provider key. Implement the form so the CAPTCHA provider key is passed via env/prop. Include clear inline comment on where to validate token server-side (`/api/contact`) before forwarding to contact@hc-hub.com via Cloudflare Email Routing.
+- Do not hardcode a provider key. Implement the form so the CAPTCHA provider key is passed via env/prop. Include clear inline comment on where to validate token server-side (`/api/contact`) before forwarding to hello@hc-hub.com via Cloudflare Email Routing.
 
 Translations & content:
 - Provide all visible text in PT and EN translations.
@@ -44,7 +44,7 @@ Translations & content:
 
 Security & privacy:
 - LGPD consent checkbox is required and stored only as part of the contact payload; form must not store data locally beyond session.
-- Suggestion (in README): the host backend must validate CAPTCHA token and then forward email to `contact@hc-hub.com`
+- Suggestion (in README): the host backend must validate CAPTCHA token and then forward email to `hello@hc-hub.com`
 UX / Accessibility:
 - Semantic HTML, aria attributes, descriptive error messages, mobile-first single-column layout on small screens.
 - Cookie/localStorage for language preference.
