@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   title: translations.pt.meta.title,
   description: translations.pt.meta.description,
   metadataBase: new URL("https://hc-hub.com"),
+  icons: {
+    icon: '/favicon.svg',
+  },
 };
 
 export default async function RootLayout({
